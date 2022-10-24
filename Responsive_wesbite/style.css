@@ -1,0 +1,65 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+body{
+    font-family: 'Josefin Sans', sans-serif;;
+}
+
+main, header{
+    padding: 1rem;
+}
+
+img{
+    /*default all images are 100% of their container*/
+    width:100%;
+}
+
+/*header style start*/
+header nav ul li{
+    display: none;
+}
+
+#logo{
+    display: inline;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    font-family: 'Rancho', cursiv;
+}
+
+#burger-menu{
+    display: inline;
+    float: right;
+    font-size: 1.6rem;
+}
+
+@media screen and (min-width:725px) {
+    body{
+        max-width: 960px;
+        margin: 0 auto;
+    }    
+
+    main{
+        padding: 0;
+    }
+    header nav ul{
+        display:flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+    header nav ul li{
+        display:inline;
+        font-size: 1.2rem;
+    }
+
+    #burger-menu{
+        display: none;
+    }
+}
+
+/*header style end*/
+
