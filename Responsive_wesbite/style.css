@@ -236,6 +236,48 @@ header nav ul li{
 /*Testimony Style End*/
 
 
+/*Expert Style Start*/
+.expert{
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.expert-img{
+    height: 60vh; 
+}
+
+.expert-info{
+    background-color: white;
+    position: absolute;
+    width: 80%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto 1.5rem auto;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.expert-info p{
+    color: #333333;
+    font-weight: lighter;
+    margin: 1rem 0; 
+}
+
+.expert-social{
+    display:flex;
+    justify-content: space-evenly;
+    width: 50%;
+    margin: 0 auto;
+    color: #0A66C2;
+}
+
+.expert-social :last-child{
+    colour: #55acee;
+}
+
+
+/*Expert Style End*/
 
 
 
