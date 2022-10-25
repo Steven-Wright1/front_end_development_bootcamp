@@ -207,7 +207,34 @@ header nav ul li{
 
 }
 
-/*Menu Style Start*/
+/*Menu Style end*/
+
+/*Testimony Style Start*/
+.testimony-hero{
+    position:relative;
+}
+
+.testimony-text{
+    position:absolute;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    transform: translate(-50%, -50%);
+
+    top:50%;
+    left: 50%;
+    color: white;
+    font-size: 1.4rem;
+    width: 80%;
+    height: 100%;
+    font-weight: lighter;
+
+}
+
+
+/*Testimony Style End*/
+
 
 
 
@@ -308,6 +335,7 @@ header nav ul li{
         width: 75%;
         margin: 0 auto;
     }
+
 
 
 }
