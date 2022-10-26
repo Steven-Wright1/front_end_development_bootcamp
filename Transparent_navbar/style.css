@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+h1{
+    text-align: center;
+    background-image: linear-gradient(to left, violet, indigo, green, blue, yellow, orange, red);
+    -webkit-background-clip: text;
+
+
+}
+
 .banner-image{
     background-image: url('img/background.jpg');
     background-size: cover;
@@ -18,7 +26,11 @@
     font-size: 8em;
     color: white;
     box-shadow: 5px 10px 8px #888888;
-    ;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#logo{
+    
 }
 
 .nav-container{
@@ -60,9 +72,13 @@
 
 p:nth-child(1){
     position: relative;
-    right: 1000px;
+    right: 972px;
     justify-self: start;
     font-size: 2rem;
     font-family: 'Courier New', Courier, monospace;
+    background-image: url(img/AI.png);
+    padding: 40px 80px 43px;
+    margin-left: 1px;
+    box-shadow: 5px 5px 16px rgb(216, 17, 223);
 }
 
