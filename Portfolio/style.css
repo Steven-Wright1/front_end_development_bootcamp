@@ -37,6 +37,17 @@ body,html{
     margin: 10px 0px;
 }
 
+.section-header{
+  font-weight: bold;
+  font-size: 1.5em;
+  padding: 10px 0px 15px 10px;
+  color: white;
+}
+
+#about-header{
+  color: black;
+}
+
 .button{
     background-color: rgb(28, 211, 248); /* Green */
     border: none;
@@ -50,10 +61,19 @@ body,html{
   }
 
   /*About Start*/
+
+  .about-section img{
+    width: 40vw;
+    height:auto;
+  } 
+
   .about-text{
     padding: 0 7%;
     margin-bottom: 1em;
+    align-items: center;
   }
+
+
     /*About End*/
 
     /*Portfoio start*/
@@ -63,9 +83,7 @@ body,html{
     padding-bottom: 2em;
   }
 
-  #about-header{
-    color: black;
-  }
+
 
     .card{
     background-color:rgb(241, 99, 38);
@@ -111,20 +129,30 @@ body,html{
   }
 
   .contact-text{
+   
     color: white;
-    padding: 25px 100px 0px;
-    font-size: 1.5em;
+    font-size: 1em;
+    width: 79vw;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(200, 151, 121, 0.3);
+    
+  }
+
+  .social-media p{
+    padding: 15px 0px;
   }
 
 form{ 
-    padding-top: 10vh;
     display: flex;
     flex-direction: column;
     margin: 1rem 10vw 1.5rem;
 }
 
-.submit{
-    width: 10px;
+#submit{
+    display:block;
+    width: 100px;
+    background-color: teal;
 }
 
 input[type=text],
@@ -141,35 +169,67 @@ textarea{
 
 @media screen and (min-width:40em){
 
+
+  .hero-text{
+    font-size: 40px;
+  }
+
+  .header2{
+    font-size: 30px;
+  }
+
+  .button{
+    font-size: 25px;
+  }
+
+  .about-section{
+    display:flex;
+    align-items: center;
+  }
+
   .card-container{
     display:flex;
     flex-flow: row wrap;
     width:100%;
     justify-items: center;
+    position: relative;
   }
 
   .card{
     width: 40%;
     max-width: 344px;
+    height:50vh;
   }
 
   .card img{
     width: 100%;
   }
 
-  #card3{
-    justify-self: start;
-    align-self: flex-start;
-  }
 
   .section-header{
     font-weight: bold;
     text-align: center;
-    vertical-align: ;
     font-size: 3em;
     padding: 10px 0px 15px 10px;
     color: white;
   }
 
 
+  .contact-text{
+    color: white;
+    padding: 25px 100px 0px;
+    font-size: 1.5em;
+
+  }
+
 }
+
+@media screen and (min-width:60em)
+  {
+    .hero{
+      max-width: 70em;
+      margin-left: auto;
+      margin-right: auto;
+
+
+  }
