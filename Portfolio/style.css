@@ -226,10 +226,34 @@ textarea{
 
 @media screen and (min-width:60em)
   {
+
+    .desktop-background{
+      display:flex;
+      height:70%;
+      
+    }
+   
     .hero{
-      max-width: 70em;
+      width: 100%;
       margin-left: auto;
       margin-right: auto;
+      height: 100%;
+    }
 
 
-  }
+
+    .test{
+      width: 10%;
+      background-image:url("img/markus-spiske-iar-afB0QQw-unsplash.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    #invert{
+      background-position: left;
+    }
+
+
+
+}
