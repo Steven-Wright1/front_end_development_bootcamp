@@ -62,6 +62,10 @@ body,html{
 
   /*About Start*/
 
+  .decoy{
+    display:none;
+  }
+
   .about-section img{
     width: 40vw;
     height:auto;
@@ -197,7 +201,6 @@ textarea{
 
   .card{
     width: 40%;
-    max-width: 344px;
     height:50vh;
   }
 
@@ -219,7 +222,6 @@ textarea{
     color: white;
     padding: 25px 100px 0px;
     font-size: 1.5em;
-
   }
 
 }
@@ -227,10 +229,11 @@ textarea{
 @media screen and (min-width:60em)
   {
 
+    /*hero start*/
+
     .desktop-background{
       display:flex;
       height:70%;
-      
     }
    
     .hero{
@@ -240,8 +243,20 @@ textarea{
       height: 100%;
     }
 
-
-
+    .hero-text{
+      font-size: 70px;
+      width: 80%;
+      position: relative;
+    }
+  
+    .header2{
+      font-size: 50px;
+    }
+  
+    .button{
+      font-size: 40px;
+    }
+  
     .test{
       width: 10%;
       background-image:url("img/markus-spiske-iar-afB0QQw-unsplash.jpg");
@@ -254,6 +269,55 @@ textarea{
       background-position: left;
     }
 
+     /*hero end*/
+
+    /*About Start*/
+    #about-img{
+      width: 20px;
+    }
+
+    .about-text{
+      font-size: 35px;
+      line-height: 150%;
+
+    }
+    /*About End*/
+
+    /*Portfolio Start*/
+    .card{
+      height: 800px;
+      width: 20vw;
+      min-width: 15vw;
+    }
+
+    .card-text {
+      font-size: 150%;
+    }
+    /*Portfolio End*/
+
+    /*Contact Start*/
+
+    .contact-text{
+      font-size: 30px;
+      width: 50vw;
+      margin: 100px auto;
+    }
+
+
+    .contact-form{
+      font-size: 30px;
+      width: 70%;
+      margin: 100px auto;
+    }
+
+    #submit{
+      font-size: 30px;
+      width: 30%;
+      padding: 20px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    /*Contact End*/
 
 
 }
