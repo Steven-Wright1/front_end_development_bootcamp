@@ -32,7 +32,12 @@ function starting_location (ships, boundaries){
     
     
         while(keep_track.length < 5){
-        starting = Math.floor((Math.random() * (65 - 1) + 1))
+        starting = Math.floor((Math.random() * (56 - 10) + 10))
+               //prevent the starting location from being a boundary 
+            while(boundaries.indexOf(starting) != -1){
+                starting = Math.floor((Math.random() * (56 - 10) + 10))
+            }
+            // check to ensure that two ships do not have the same starting location
             if(keep_track.indexOf(starting) === -1){
                 keep_track.push(starting);
                 ships[i][0] = starting;
