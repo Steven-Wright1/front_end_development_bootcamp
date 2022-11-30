@@ -84,10 +84,12 @@ function starting_location (ships, boundaries){
 
             for(j = 1; j < ships[i].length; j++){
 
-                if(boundaries.indexOf(ships[i][j-1] + operator) != -1 && j != 0){
+                if(boundaries.indexOf(ships[i][j-1] + operator) != -1 && j != (ships[i].length -1)){
                     ships[i][j] = (ships[i][j-1] + operator)
                     operator = -operator;
-                }
+                    ships[i][j+1] = (ships[i][j] + (j+1)*operator);
+                    j+=1;
+                 }
                 else{
                     ships[i][j] = (ships[i][j-1] + operator)
                 }
