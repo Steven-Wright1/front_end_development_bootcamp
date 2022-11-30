@@ -1,0 +1,29 @@
+*{
+    background-color: black;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0; 
+}
+
+body{
+    height: 100%;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    grid-template-rows: repeat(8,1fr);;
+}
+
+.grid-item{
+    color: white;
+    border: 2px solid;
+    border-color: white;
+    height: 11vh;   
+    padding:1px;
+}
+
+.grid-item:hover{
+    background-color: aqua;
+}
+
