@@ -8,28 +8,30 @@ let ships = [
 ]
 
 let board_size = 8;
+let boundaries = [];
 
 // calculate board boundaries
-let boundaries = [];
+function bounds_calc(boundaries){
 let counter = 1;
-while(counter < board_size){
-
-    boundaries.push((counter*board_size)-board_size+1); // left edge
-    boundaries.push(1+counter);                         //top edge
-    boundaries.push((1+counter)*board_size);            // right edge
-    boundaries.push(Math.pow(board_size,2)-(counter))   //bottom edge
-    counter+=1;
+    while(counter < board_size){
+        boundaries.push((counter*board_size)-board_size+1); // left edge
+        boundaries.push(1+counter);                         //top edge
+        boundaries.push((1+counter)*board_size);            // right edge
+        boundaries.push(Math.pow(board_size,2)-(counter))   //bottom edge
+        counter+=1;
+    }
+    return boundaries;
 }
 
 
+
 // calculate the starting location of the ships and use to populate ships array
-function starting_location (ships, boundaries){
+function starting_location (ships, boundaries, indicator){
     let keep_track = [];
     let starting = 0;
     let i = 0;
     let j = 0;
     let operator = 0;
-    
     
         while(keep_track.length < 5){
         starting = Math.floor((Math.random() * (56 - 10) + 10))
@@ -44,43 +46,52 @@ function starting_location (ships, boundaries){
                 i+=1;
             }
         }
+    
+    //if(indicator !== null){
+    //    ships[indicator][0] = Math.floor((Math.random() * (56 - 10) + 10));
+    //}
 
-         // wipe keep track for re-use of array
-         keep_track = [];
+        return ships
+    }
+
+
+//function decision_maker
+function decisions(){
+let decision_maker = Math.floor((Math.random() * (5 - 1) + 1));
+    switch(decision_maker){
+        case 1: 
+           operator = 1;
+           break;
+        case 2: 
+           operator = board_size;  
+           break;
+        case 3: 
+           operator = board_size + 1;
+           break;
+        case 4: 
+           operator = board_size - 1; 
+           break;
+    }
+}
+
+
+
+// BODY
+        bounds_calc(boundaries)
+        starting_location(ships,boundaries, null)
+        
+        let tracking_arr = [];
+        for(let row in ships){
+            tracking_arr.push(ships[row][0]);
+        }
+
+        console.log(tracking_arr)
+        
+
 
         //loop through the ships array
         for(i = 0; i < 5; i++){
-
-            // use a random decision maker to pick between 1 and 4 to decide whihc way the other ship pieces will go
-            let decision_maker = Math.floor((Math.random() * (5 - 1) + 1));
-            
-                switch(decision_maker){
-                    case 1: 
-                        operator = 1;
-                        break;
-                   // case 2: 
-                    //    operator = -1;
-                     //   break;
-                    case 2: 
-                        operator = board_size;  
-                        break;
-                    //case 4: 
-                      //  operator = -board_size; 
-                       // break;            
-                    case 3: 
-                        operator = board_size + 1;
-                        break;
-                    //case 6: 
-                      //  operator = -board_size - 1;
-                     // break;
-                    case 4: 
-                        operator = board_size - 1; 
-                        break;
-                   // case 8: 
-                    //    operator = -board_size + 1;
-                    //    break;
-                    } 
-                    
+            decisions();
 
             for(j = 1; j < ships[i].length; j++){
 
@@ -88,39 +99,17 @@ function starting_location (ships, boundaries){
                     ships[i][j] = (ships[i][j-1] + operator)
                     operator = -operator;
                     ships[i][j+1] = (ships[i][j] + (j+1)*operator);
+                    tracking_arr.push(ships[i][j+1])
                     j+=1;
                  }
                 else{
                     ships[i][j] = (ships[i][j-1] + operator)
                 }
-                
-              
-
-                
-                
-                //ships[i][j] = (ships[i][j-1] + operator)
-                
-                
-                
-
-                //console.log(ships[i][j])
+                }
         }
-    }
-        //console.log(boundaries)
+    //console.log(tracking_arr);
 
-
-
-        return ships;
-}
-
-
-
-// calculate other ship locations
-
-
-
-
-
+    
 
 
 // main body to check whether the grid selected contains a ship
@@ -144,8 +133,9 @@ guess.forEach(each => {
         });
     })
 
-starting_location(ships,boundaries)
-console.log(ships)
+    console.log(ships)
+
+
 
 
 
