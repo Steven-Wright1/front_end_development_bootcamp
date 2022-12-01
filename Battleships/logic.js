@@ -88,24 +88,29 @@ let decision_maker = Math.floor((Math.random() * (5 - 1) + 1));
         console.log(tracking_arr)
         
 
-
+let i=0;
+let j=1;
         //loop through the ships array
-        for(i = 0; i < 5; i++){
+        while(i<5){
             decisions();
 
-            for(j = 1; j < ships[i].length; j++){
+            while(j < ships[i].length){
 
                 if(boundaries.indexOf(ships[i][j-1] + operator) != -1 && j != (ships[i].length -1)){
                     ships[i][j] = (ships[i][j-1] + operator)
                     operator = -operator;
+                    console.log(j)
                     ships[i][j+1] = (ships[i][j] + (j+1)*operator);
-                    tracking_arr.push(ships[i][j+1])
-                    j+=1;
+                   
+                    j+=2;
                  }
                 else{
                     ships[i][j] = (ships[i][j-1] + operator)
+                    j+=1;
                 }
                 }
+                j=1;
+                i+=1;
         }
     //console.log(tracking_arr);
 
