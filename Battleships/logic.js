@@ -76,44 +76,74 @@ let decision_maker = Math.floor((Math.random() * (5 - 1) + 1));
 
 
 
+
 // BODY
         bounds_calc(boundaries)
         starting_location(ships,boundaries, null)
         
+
         let tracking_arr = [];
         for(let row in ships){
             tracking_arr.push(ships[row][0]);
+        }
+        // function to check whether ship location is a duplicate and act if so
+        function de_duplicator(location,i,j){
+            tracking_arr.push(location)
+            console.log(tracking_arr)
         }
 
         
         
 
 let i=0;
-let j=1;
+let j=1
+let new_start=Math.floor((Math.random() * (56 - 10) + 10));
         //loop through the ships array
         while(i<5){
             decisions();
 
             while(j < ships[i].length){
 
+                
                 if(boundaries.indexOf(ships[i][j-1] + operator) != -1 && j != (ships[i].length -1)){
                     ships[i][j] = (ships[i][j-1] + operator)
+                    if(tracking_arr.indexOf(ships[i][j]) != -1){
+                        while(tracking_arr.indexOf(new_start) != -1 ){
+                        new_start = Math.floor((Math.random() * (56 - 10) + 10))
+                        }
+                        ships[i][0] = new_start;
+                        j=0;
+                    }
                     tracking_arr.push(ships[i][j])
                     operator = -operator;
                     ships[i][j+1] = (ships[i][j] + (j+1)*operator);
+                    if(tracking_arr.indexOf(ships[i][j+1]) != -1){
+                        while(tracking_arr.indexOf(new_start) != -1 ){
+                        new_start = Math.floor((Math.random() * (56 - 10) + 10))
+                        }
+                        ships[i][0] = new_start;
+                        j=0;
+                    }
                     tracking_arr.push(ships[i][j+1])
                     j+=2;
-                 }
+                }
                 else{
                     ships[i][j] = (ships[i][j-1] + operator)
+                    if(tracking_arr.indexOf(ships[i][j]) != -1){
+                        while(tracking_arr.indexOf(new_start) != -1 ){
+                        new_start = Math.floor((Math.random() * (56 - 10) + 10))
+                        }
+                        ships[i][0] = new_start;
+                        j=0;
+                    }
                     tracking_arr.push(ships[i][j])
                     j+=1;
                 }
                 }
                 j=1;
-                i+=1;
+                i+=1;       
         }
-    console.log(tracking_arr);
+    //console.log(tracking_arr);
 
     
 
