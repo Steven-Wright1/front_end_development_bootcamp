@@ -85,7 +85,7 @@ let decision_maker = Math.floor((Math.random() * (5 - 1) + 1));
             tracking_arr.push(ships[row][0]);
         }
 
-        console.log(tracking_arr)
+        
         
 
 let i=0;
@@ -98,21 +98,22 @@ let j=1;
 
                 if(boundaries.indexOf(ships[i][j-1] + operator) != -1 && j != (ships[i].length -1)){
                     ships[i][j] = (ships[i][j-1] + operator)
+                    tracking_arr.push(ships[i][j])
                     operator = -operator;
-                    console.log(j)
                     ships[i][j+1] = (ships[i][j] + (j+1)*operator);
-                   
+                    tracking_arr.push(ships[i][j+1])
                     j+=2;
                  }
                 else{
                     ships[i][j] = (ships[i][j-1] + operator)
+                    tracking_arr.push(ships[i][j])
                     j+=1;
                 }
                 }
                 j=1;
                 i+=1;
         }
-    //console.log(tracking_arr);
+    console.log(tracking_arr);
 
     
 
