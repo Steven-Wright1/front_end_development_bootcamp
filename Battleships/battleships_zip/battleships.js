@@ -57,7 +57,7 @@ function starting_location (ships, boundaries, indicator){
 
 //function decision_maker
 function decisions(){
-let decision_maker = Math.floor((Math.random() * (5 - 1) + 1));
+let decision_maker = Math.floor((Math.random() * (3 - 1) + 1));
     switch(decision_maker){
         case 1: 
            operator = 1;
@@ -65,12 +65,12 @@ let decision_maker = Math.floor((Math.random() * (5 - 1) + 1));
         case 2: 
            operator = board_size;  
            break;
-        case 3: 
-           operator = board_size + 1;
-           break;
-        case 4: 
-           operator = board_size - 1; 
-           break;
+//        case 3: 
+//           operator = board_size + 1;
+//           break;
+//        case 4: 
+//           operator = board_size - 1; 
+//           break;
     }
 }
 
@@ -108,7 +108,7 @@ let new_start=Math.floor((Math.random() * (56 - 10) + 10));
                 if(boundaries.indexOf(ships[i][j-1] + operator) != -1 && j != (ships[i].length -1)){
                     ships[i][j] = (ships[i][j-1] + operator)
                     if(tracking_arr.indexOf(ships[i][j]) != -1){
-                        while(tracking_arr.indexOf(new_start) != -1 ){
+                        while(tracking_arr.indexOf(new_start) != -1 || boundaries.indexOf(new_start) != -1){
                         new_start = Math.floor((Math.random() * (56 - 10) + 10))
                         }
                         ships[i][0] = new_start;
@@ -118,7 +118,7 @@ let new_start=Math.floor((Math.random() * (56 - 10) + 10));
                     operator = -operator;
                     ships[i][j+1] = (ships[i][j] + (j+1)*operator);
                     if(tracking_arr.indexOf(ships[i][j+1]) != -1){
-                        while(tracking_arr.indexOf(new_start) != -1 ){
+                        while(tracking_arr.indexOf(new_start) != -1 ||  boundaries.indexOf(new_start) != -1){
                         new_start = Math.floor((Math.random() * (56 - 10) + 10))
                         }
                         ships[i][0] = new_start;
@@ -130,7 +130,7 @@ let new_start=Math.floor((Math.random() * (56 - 10) + 10));
                 else{
                     ships[i][j] = (ships[i][j-1] + operator)
                     if(tracking_arr.indexOf(ships[i][j]) != -1){
-                        while(tracking_arr.indexOf(new_start) != -1 ){
+                        while(tracking_arr.indexOf(new_start) != -1 || boundaries.indexOf(new_start) != -1){
                         new_start = Math.floor((Math.random() * (56 - 10) + 10))
                         }
                         ships[i][0] = new_start;
