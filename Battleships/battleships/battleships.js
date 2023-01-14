@@ -57,7 +57,7 @@ function starting_location (ships, boundaries, indicator){
 
 //function decision_maker
 function decisions(){
-let decision_maker = Math.floor((Math.random() * (3`` - 1) + 1));
+let decision_maker = Math.floor((Math.random() * (3 - 1) + 1));
     switch(decision_maker){
         case 1: 
            operator = 1;
